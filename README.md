@@ -199,35 +199,42 @@ Get-Job -Name "USM-Install-Job*" | Where-Object { $_.State -eq 'Completed' } | R
 
 ## 📦 Catálogo de Softwares Homologados
 
-O catálogo no [USM-Install.ps1](file:///c:/Users/07899861403/Documents/Projeto%20Alura/USM-Install.ps1) agora inclui ferramentas essenciais para administradores de sistemas, infraestrutura, redes e desenvolvedores:
+O catálogo no [USM-Install.ps1](file:///c:/Users/07899861403/Documents/Projeto%20Alura/USM-Install.ps1) foi otimizado especificamente para **Suporte Técnico, Infraestrutura e Administração de Redes/Sistemas**, removendo softwares pesados de desenvolvimento ou entretenimento pessoal:
 
-| ID no Chocolatey | Nome do Software | Categoria | Por que é Essencial para Infraestrutura? |
+| ID no Chocolatey | Nome do Software | Categoria | Finalidade para Suporte & Infraestrutura |
 | :--- | :--- | :--- | :--- |
-| `temurin21` | **Eclipse Temurin JDK 21 (Java)** | Runtimes & SDKs | Versão LTS oficial do OpenJDK (adotada amplamente pelo mercado), sem custos de licenciamento Oracle. |
-| `vcredist-all` | **Visual C++ All-in-One** | Runtimes & SDKs | Instala todas as bibliotecas de runtime C++ (2005 a 2022 x86/x64). Evita erros de DLL faltando no Windows. |
-| `visualstudio2022community` | **Visual Studio 2022 Community** | Desenvolvimento | IDE completo com suporte a compiladores C/C++, depuração nativa e ferramentas de build. |
-| `sysinternals` | **Sysinternals Suite** | Infra & Diagnóstico | Kit definitivo da Microsoft (ProcMon, Process Explorer, TCPView, PsExec, Autoruns) para troubleshooting avançado. |
-| `wireshark` | **Wireshark** | Redes & Diagnóstico | Analisador e sniffer de pacotes de rede para investigar latência, DNS, tráfego TCP/UDP e firewalls. |
-| `advanced-ip-scanner` | **Advanced IP Scanner** | Redes & Diagnóstico | Mapeador veloz de sub-redes, descobre IPs ativos, endereços MAC e portas abertas em segundos. |
-| `putty.install` | **PuTTY** | Acesso Remoto | Cliente leve e confiável para acesso SSH a roteadores, switches, servidores Linux e conexões Seriais. |
-| `winscp.install` | **WinSCP** | Acesso Remoto | Cliente gráfico de transferência segura de arquivos via SFTP, SCP e FTP com suporte a sincronização. |
-| `microsoft-windows-terminal` | **Windows Terminal** | Terminais & Shells | Terminal moderno com abas, atalhos, suporte a múltiplos perfis (PowerShell, CMD, WSL). |
-| `powershell-core` | **PowerShell 7 (pwsh)** | Terminais & Shells | Versão moderna e de alto desempenho do PowerShell, ideal para scripts avançados de automação e cloud. |
-| `python3` | **Python 3** | Runtimes & SDKs | Padrão da indústria para scripts de automação, Ansible, SDKs de nuvem (AWS/Azure) e IaC. |
-| `docker-desktop` | **Docker Desktop** | Containers & Infra | Criação, teste e gerenciamento de containers Linux/Windows em ambiente local. |
-| `dbeaver` | **DBeaver Community** | Banco de Dados | Gerenciador universal de banco de dados (PostgreSQL, MySQL, SQL Server, Oracle, SQLite). |
-| `git.install` | **Git** | Desenvolvimento | Controle de versão para repositórios de scripts, infraestrutura como código (IaC) e GitOps. |
-| `vscode` | **Visual Studio Code** | Desenvolvimento | Editor de código mais popular, suporte completo a PowerShell, Python, Terraform e Docker. |
-| `7zip.install` | **7-Zip** | Utilitários | Compactador/descompactador universal (.zip, .7z, .tar.gz, .iso). |
-| `notepadplusplus.install` | **Notepad++** | Editores | Editor rápido para análise de arquivos de log gigantes, scripts e configs. |
-| `powertoys` | **Microsoft PowerToys** | Utilitários | Utilitários de produtividade da Microsoft (redimensionador, zonas de janela, OCR, busca rápida). |
-| `adobereader` | **Adobe Acrobat Reader DC** | Produtividade | Visualizador padrão de documentos PDF corporativos. |
-| `googlechrome` | **Google Chrome** | Navegadores | Navegador web homologado corporativo. |
-| `firefox` | **Mozilla Firefox** | Navegadores | Navegador alternativo de alta compatibilidade. |
-| `brave` | **Brave Browser** | Navegadores | Navegador focado em privacidade e bloqueio nativo de rastreadores. |
-| `vlc` | **VLC Media Player** | Multimídia | Player universal com suporte a praticamente todos os codecs de áudio/vídeo. |
-| `spotify` | **Spotify** | Multimídia | Streaming de áudio. |
-| `discord` | **Discord** | Comunicação | Comunicação por voz e texto para equipes. |
+| `rustdesk.install` | **RustDesk** | Acesso Remoto | Suporte remoto rápido ponto a ponto (open-source) para estações fora de domínio ou sem RDP. |
+| `anydesk.install` | **AnyDesk** | Acesso Remoto | Acesso remoto de baixa latência para atendimento rápido a usuários finais. |
+| `mremoteng` | **mRemoteNG** | Acesso Remoto | Gerenciador de conexões com abas para múltiplos protocolos (RDP, VNC, SSH, Telnet) simultâneos. |
+| `putty.install` | **PuTTY** | Acesso Remoto | Cliente leve e confiável para acesso SSH/Telnet a switches, roteadores e servidores Linux. |
+| `winscp.install` | **WinSCP** | Acesso Remoto | Cliente gráfico de transferência segura de arquivos via SFTP, SCP e FTP. |
+| `wireshark` | **Wireshark** | Redes & Conectividade | Analisador de protocolos e sniffer de pacotes para diagnóstico profundo de tráfego e rede. |
+| `nmap` | **Nmap / Zenmap** | Redes & Conectividade | Varredura avançada de portas, identificação de sistema operacional e auditoria de serviços de rede. |
+| `iperf3` | **iPerf3** | Redes & Conectividade | Medição real de throughput (taxa de transferência) LAN/WAN e diagnóstico de gargalos de banda. |
+| `advanced-ip-scanner` | **Advanced IP Scanner** | Redes & Conectividade | Mapeamento rápido de sub-redes, descoberta de IPs ativos e endereços MAC. |
+| `angryip` | **Angry IP Scanner** | Redes & Conectividade | Scanner de rede ágil e leve para varredura de faixas IP e detecção de conflitos. |
+| `sysinternals` | **Sysinternals Suite** | Hardware & Diagnóstico | Kit oficial da Microsoft (ProcMon, Process Explorer, TCPView, PsExec, Autoruns) para troubleshooting. |
+| `crystaldiskinfo.install` | **CrystalDiskInfo** | Hardware & Diagnóstico | Leitura imediata de dados S.M.A.R.T. e saúde física de SSDs/HDDs. |
+| `hwinfo.install` | **HWiNFO** | Hardware & Diagnóstico | Levantamento detalhado de componentes físicos, barramentos e sensores de temperatura/tensão. |
+| `cpu-z.install` | **CPU-Z** | Hardware & Diagnóstico | Identificação rápida de processador, placa-mãe, frequências e slots de memória RAM ocupados. |
+| `treesizefree` | **TreeSize Free** | Hardware & Diagnóstico | Análise visual de ocupação de disco para localizar pastas gigantes consumindo espaço. |
+| `wiztree` | **WizTree** | Hardware & Diagnóstico | Leitor ultra-rápido de MFT para encontrar arquivos e diretórios pesados em segundos. |
+| `rufus` | **Rufus** | Suporte & Manutenção | Criação rápida de pendrives e mídias bootáveis (Windows, Linux, ISOs de recuperação). |
+| `revo-uninstaller` | **Revo Uninstaller** | Suporte & Manutenção | Remoção completa de softwares problemáticos com limpeza forçada de restos de registro e pastas. |
+| `7zip.install` | **7-Zip** | Suporte & Manutenção | Compactador/descompactador universal (`.zip`, `.7z`, `.tar.gz`, `.iso`). |
+| `powertoys` | **Microsoft PowerToys** | Suporte & Manutenção | Utilitários avançados de produtividade e gerenciamento de janelas no Windows. |
+| `microsoft-windows-terminal` | **Windows Terminal** | Terminais & Shells | Terminal moderno com abas e suporte a múltiplos perfis (PowerShell, CMD, WSL, SSH). |
+| `powershell-core` | **PowerShell 7 (pwsh)** | Terminais & Shells | Shell multiplataforma moderno para automação e administração avançada. |
+| `vcredist-all` | **Visual C++ All-in-One** | Runtimes & SDKs | Pacote completo de runtimes C++ (2005 a 2022 x86/x64) para evitar erros de DLLs ausentes. |
+| `python3` | **Python 3** | Runtimes & SDKs | Interpretador para scripts de automação de infraestrutura, redes e integração. |
+| `notepadplusplus.install` | **Notepad++** | Editores & Scripts | Editor leve e rápido para inspeção de logs extensos, arquivos `.ini`, `.xml`, `.json` e scripts. |
+| `vscode` | **Visual Studio Code** | Editores & Scripts | Editor versátil para criação e depuração de scripts PowerShell, Python e IaC. |
+| `git.install` | **Git** | Editores & Scripts | Controle de versão para repositórios de scripts de suporte e automação. |
+| `docker-desktop` | **Docker Desktop** | Containers & Infra | Execução e teste de containers e ferramentas isoladas localmente. |
+| `googlechrome` | **Google Chrome** | Navegadores | Navegador web corporativo padrão. |
+| `firefox` | **Mozilla Firefox** | Navegadores | Navegador secundário para testes de compatibilidade web e acesso a gerenciadores legados. |
+| `adobereader` | **Adobe Acrobat Reader DC** | Produtividade | Leitor padrão homologado para manuais técnicos e documentos PDF. |
+| `vlc` | **VLC Media Player** | Multimídia | Reprodutor universal com codecs integrados para validação de áudio/vídeo e gravações. |
 
 ---
 

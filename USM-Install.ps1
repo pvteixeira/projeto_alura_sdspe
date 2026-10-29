@@ -47,44 +47,53 @@ begin {
         $OutputEncoding = [System.Text.Encoding]::UTF8
     } catch {}
 
-    # Catálogo corporativo oficial de softwares homologados
+    # Catálogo corporativo oficial de softwares homologados (Foco em Infraestrutura & Suporte Técnico)
     $DefaultCatalog = @(
-        # Runtimes, SDKs & Compiladores
-        [PSCustomObject]@{ Id = 'temurin21';                  Name = 'Eclipse Temurin JDK 21 (Java)';  Category = 'Runtimes & SDKs' }
-        [PSCustomObject]@{ Id = 'vcredist-all';               Name = 'Visual C++ All-in-One (2005-22)';Category = 'Runtimes & SDKs' }
-        [PSCustomObject]@{ Id = 'python3';                    Name = 'Python 3';                       Category = 'Runtimes & SDKs' }
-
-        # Ferramentas Essenciais de Infraestrutura & Diagnóstico
-        [PSCustomObject]@{ Id = 'sysinternals';               Name = 'Sysinternals Suite';             Category = 'Infra & Diagnóstico' }
-        [PSCustomObject]@{ Id = 'wireshark';                  Name = 'Wireshark';                      Category = 'Redes & Diagnóstico' }
-        [PSCustomObject]@{ Id = 'advanced-ip-scanner';        Name = 'Advanced IP Scanner';            Category = 'Redes & Diagnóstico' }
+        # Acesso Remoto & Gerenciamento
+        [PSCustomObject]@{ Id = 'rustdesk.install';           Name = 'RustDesk';                       Category = 'Acesso Remoto' }
+        [PSCustomObject]@{ Id = 'anydesk.install';            Name = 'AnyDesk';                        Category = 'Acesso Remoto' }
+        [PSCustomObject]@{ Id = 'mremoteng';                  Name = 'mRemoteNG (Multi-RDP/SSH)';      Category = 'Acesso Remoto' }
         [PSCustomObject]@{ Id = 'putty.install';              Name = 'PuTTY (SSH/Telnet)';             Category = 'Acesso Remoto' }
         [PSCustomObject]@{ Id = 'winscp.install';             Name = 'WinSCP (SFTP/FTP)';              Category = 'Acesso Remoto' }
 
-        # Terminais Modernos & Automação
+        # Redes & Conectividade
+        [PSCustomObject]@{ Id = 'wireshark';                  Name = 'Wireshark';                      Category = 'Redes & Conectividade' }
+        [PSCustomObject]@{ Id = 'nmap';                       Name = 'Nmap / Zenmap';                  Category = 'Redes & Conectividade' }
+        [PSCustomObject]@{ Id = 'iperf3';                     Name = 'iPerf3 (Teste de Banda)';        Category = 'Redes & Conectividade' }
+        [PSCustomObject]@{ Id = 'advanced-ip-scanner';        Name = 'Advanced IP Scanner';            Category = 'Redes & Conectividade' }
+        [PSCustomObject]@{ Id = 'angryip';                    Name = 'Angry IP Scanner';               Category = 'Redes & Conectividade' }
+
+        # Hardware & Diagnóstico de Sistema
+        [PSCustomObject]@{ Id = 'sysinternals';               Name = 'Sysinternals Suite';             Category = 'Hardware & Diagnóstico' }
+        [PSCustomObject]@{ Id = 'crystaldiskinfo.install';    Name = 'CrystalDiskInfo (S.M.A.R.T.)';   Category = 'Hardware & Diagnóstico' }
+        [PSCustomObject]@{ Id = 'hwinfo.install';             Name = 'HWiNFO';                         Category = 'Hardware & Diagnóstico' }
+        [PSCustomObject]@{ Id = 'cpu-z.install';              Name = 'CPU-Z';                          Category = 'Hardware & Diagnóstico' }
+        [PSCustomObject]@{ Id = 'treesizefree';               Name = 'TreeSize Free';                  Category = 'Hardware & Diagnóstico' }
+        [PSCustomObject]@{ Id = 'wiztree';                    Name = 'WizTree (Análise de Disco)';     Category = 'Hardware & Diagnóstico' }
+
+        # Utilitários de Suporte & Manutenção
+        [PSCustomObject]@{ Id = 'rufus';                      Name = 'Rufus (Mídia Bootável)';         Category = 'Suporte & Manutenção' }
+        [PSCustomObject]@{ Id = 'revo-uninstaller';           Name = 'Revo Uninstaller';               Category = 'Suporte & Manutenção' }
+        [PSCustomObject]@{ Id = '7zip.install';               Name = '7-Zip';                          Category = 'Suporte & Manutenção' }
+        [PSCustomObject]@{ Id = 'powertoys';                  Name = 'Microsoft PowerToys';            Category = 'Suporte & Manutenção' }
+
+        # Terminais, Automação & Runtimes
         [PSCustomObject]@{ Id = 'microsoft-windows-terminal'; Name = 'Windows Terminal';               Category = 'Terminais & Shells' }
         [PSCustomObject]@{ Id = 'powershell-core';            Name = 'PowerShell 7 (pwsh)';            Category = 'Terminais & Shells' }
+        [PSCustomObject]@{ Id = 'vcredist-all';               Name = 'Visual C++ All-in-One (2005-22)';Category = 'Runtimes & SDKs' }
+        [PSCustomObject]@{ Id = 'python3';                    Name = 'Python 3';                       Category = 'Runtimes & SDKs' }
 
-        # Desenvolvimento, IDEs & Containers
-        [PSCustomObject]@{ Id = 'vscode';                     Name = 'Visual Studio Code';             Category = 'Desenvolvimento' }
-        [PSCustomObject]@{ Id = 'visualstudio2022community';  Name = 'Visual Studio 2022 Community';   Category = 'Desenvolvimento' }
-        [PSCustomObject]@{ Id = 'git.install';                Name = 'Git';                            Category = 'Desenvolvimento' }
+        # Editores, Scripts & Containers
+        [PSCustomObject]@{ Id = 'notepadplusplus.install';    Name = 'Notepad++';                      Category = 'Editores & Scripts' }
+        [PSCustomObject]@{ Id = 'vscode';                     Name = 'Visual Studio Code';             Category = 'Editores & Scripts' }
+        [PSCustomObject]@{ Id = 'git.install';                Name = 'Git';                            Category = 'Editores & Scripts' }
         [PSCustomObject]@{ Id = 'docker-desktop';             Name = 'Docker Desktop';                 Category = 'Containers & Infra' }
-        [PSCustomObject]@{ Id = 'dbeaver';                    Name = 'DBeaver Community (SQL)';       Category = 'Banco de Dados' }
 
-        # Navegadores
+        # Navegadores & Produtividade
         [PSCustomObject]@{ Id = 'googlechrome';               Name = 'Google Chrome';                  Category = 'Navegadores' }
         [PSCustomObject]@{ Id = 'firefox';                    Name = 'Mozilla Firefox';                Category = 'Navegadores' }
-        [PSCustomObject]@{ Id = 'brave';                      Name = 'Brave Browser';                  Category = 'Navegadores' }
-
-        # Produtividade & Utilitários
-        [PSCustomObject]@{ Id = '7zip.install';               Name = '7-Zip';                          Category = 'Utilitários' }
-        [PSCustomObject]@{ Id = 'notepadplusplus.install';    Name = 'Notepad++';                      Category = 'Editores' }
-        [PSCustomObject]@{ Id = 'powertoys';                  Name = 'Microsoft PowerToys';            Category = 'Utilitários' }
         [PSCustomObject]@{ Id = 'adobereader';                Name = 'Adobe Acrobat Reader DC';        Category = 'Produtividade' }
         [PSCustomObject]@{ Id = 'vlc';                        Name = 'VLC Media Player';               Category = 'Multimídia' }
-        [PSCustomObject]@{ Id = 'spotify';                    Name = 'Spotify';                        Category = 'Multimídia' }
-        [PSCustomObject]@{ Id = 'discord';                    Name = 'Discord';                        Category = 'Comunicação' }
     )
 
     #region Funções de Log e Validação Local
@@ -128,6 +137,16 @@ begin {
         if (-not $scriptPath) {
             $scriptPath = $MyInvocation.MyCommand.Definition
         }
+
+        # Garante UTF-8 com BOM no arquivo antes de reabrir no Windows PowerShell 5.1
+        try {
+            if (Test-Path $scriptPath) {
+                $rawBytes = [System.IO.File]::ReadAllBytes($scriptPath)
+                if ($rawBytes.Length -ge 3 -and -not ($rawBytes[0] -eq 0xEF -and $rawBytes[1] -eq 0xBB -and $rawBytes[2] -eq 0xBF)) {
+                    [System.IO.File]::WriteAllBytes($scriptPath, ([byte[]](0xEF, 0xBB, 0xBF) + $rawBytes))
+                }
+            }
+        } catch {}
 
         $argList = @("-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "`"$scriptPath`"")
         if ($ScriptArgs) {
@@ -340,6 +359,74 @@ begin {
         # 3. Gerenciamento e Instalação dos Pacotes Homologados
         Write-InternalLog -Message "Total de pacotes a processar: $($SoftwareTasks.Count)" -Level 'INFO'
 
+        # Função de contingência para o pacote iperf3 (cujo mirror original files.budman.pw no Chocolatey está offline/404)
+        function Install-Iperf3FromGitHubMirror {
+            param([bool]$ForceReinstall = $false)
+
+            Write-InternalLog -Message "Aplicando correção de mirror para 'iperf3' (repositório oficial GitHub ar51an/iperf3-win-builds)..." -Level 'INFO'
+
+            $chocoRoot = "$env:ProgramData\chocolatey"
+            $libBadDir = "$chocoRoot\lib-bad\iperf3"
+            $libDir    = "$chocoRoot\lib\iperf3"
+            $toolsDir  = "$libDir\tools"
+            $shimGen   = "$chocoRoot\tools\shimgen.exe"
+            $shimExe   = "$chocoRoot\bin\iperf3.exe"
+
+            if (Test-Path $libBadDir) {
+                Remove-Item -Path $libBadDir -Recurse -Force -ErrorAction SilentlyContinue
+            }
+
+            # 1. Registra o pacote no Chocolatey pulando o script quebrado (files.budman.pw)
+            $chocoArgs = if ($ForceReinstall) {
+                @("upgrade", "iperf3", "-y", "--force", "--skip-powershell", "--no-progress")
+            } else {
+                @("install", "iperf3", "-y", "--skip-powershell", "--no-progress")
+            }
+            $null = Start-Process -FilePath "choco.exe" -ArgumentList $chocoArgs -Wait -PassThru -NoNewWindow
+
+            if (-not (Test-Path $toolsDir)) {
+                $null = New-Item -ItemType Directory -Path $toolsDir -Force
+            }
+
+            # 2. Baixa o binário oficial iPerf 3.20 (x64) direto do GitHub oficial do mantenedor
+            [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072
+            $mirrorUrl = "https://github.com/ar51an/iperf3-win-builds/releases/download/3.20/iperf-3.20-win64.zip"
+            $tempZip   = "$env:TEMP\iperf-3.20-win64.zip"
+
+            Write-InternalLog -Message "Baixando iPerf3 64-bit de '$mirrorUrl'..." -Level 'INFO'
+            Invoke-WebRequest -Uri $mirrorUrl -OutFile $tempZip -UseBasicParsing -ErrorAction Stop
+
+            # 3. Extrai iperf3.exe e cygwin1.dll na pasta tools do pacote Chocolatey
+            Expand-Archive -Path $tempZip -DestinationPath $toolsDir -Force
+            Remove-Item -Path $tempZip -Force -ErrorAction SilentlyContinue
+
+            if (-not (Test-Path "$toolsDir\iperf3.exe")) {
+                throw "Binário iperf3.exe não encontrado após extração."
+            }
+
+            # 4. Atualiza o chocolateyinstall.ps1 local com a URL funcional do GitHub
+            $installPs1 = "$toolsDir\chocolateyinstall.ps1"
+            if (Test-Path $installPs1) {
+                $fixedScript = @"
+`$ErrorActionPreference = 'Stop';
+`$packageName = 'iPerf3'
+`$url64 = 'https://github.com/ar51an/iperf3-win-builds/releases/download/3.20/iperf-3.20-win64.zip'
+`$checksum64 = 'FC2A736B35559D410B7032E2BE3DE45A6884D5DCF9D12B96E759B1E2E7076B7B'
+`$checksumType = 'sha256'
+`$toolsDir = "`$(Split-Path -parent `$MyInvocation.MyCommand.Definition)"
+Install-ChocolateyZipPackage -packageName "`$packageName" -unzipLocation "`$toolsDir" -checksumType `$checksumType -url64bit "`$url64" -checksum64 `$checksum64
+"@
+                Set-Content -Path $installPs1 -Value $fixedScript -Encoding UTF8 -Force
+            }
+
+            # 5. Gera o shim executável global no PATH do Chocolatey (C:\ProgramData\chocolatey\bin\iperf3.exe)
+            if (Test-Path $shimGen) {
+                & $shimGen -o="$shimExe" -p="$toolsDir\iperf3.exe" | Out-Null
+            } else {
+                Copy-Item -Path "$toolsDir\*" -Destination "$chocoRoot\bin" -Force
+            }
+        }
+
         foreach ($task in $SoftwareTasks) {
             $pkg = if ($task -is [hashtable] -or $task -is [PSCustomObject]) { $task.Id } else { [string]$task }
             $force = if ($task -is [hashtable] -or $task -is [PSCustomObject]) { [bool]$task.ForceReinstall } else { $false }
@@ -349,6 +436,12 @@ begin {
             Write-InternalLog -Message "Processando pacote: '$pkg'..." -Level 'INFO'
 
             try {
+                if ($pkg.ToLower() -eq 'iperf3') {
+                    Install-Iperf3FromGitHubMirror -ForceReinstall $force
+                    Write-InternalLog -Message "Pacote 'iperf3' concluído com SUCESSO!" -Level 'SUCCESS'
+                    continue
+                }
+
                 if ($force) {
                     Write-InternalLog -Message "Baixando novamente / Forçando reinstalação de '$pkg'..." -Level 'INFO'
                     $process = Start-Process -FilePath "choco.exe" -ArgumentList "upgrade", $pkg, "-y", "--force", "--no-progress" -Wait -PassThru -NoNewWindow
@@ -356,6 +449,11 @@ begin {
                     Write-InternalLog -Message "Instalando pacote '$pkg' em modo silencioso..." -Level 'INFO'
                     $process = Start-Process -FilePath "choco.exe" -ArgumentList "install", $pkg, "-y", "--no-progress" -Wait -PassThru -NoNewWindow
                 }
+
+                try {
+                    [Console]::OutputEncoding = [System.Text.Encoding]::UTF8
+                    $OutputEncoding = [System.Text.Encoding]::UTF8
+                } catch {}
 
                 switch ($process.ExitCode) {
                     0 {
